@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>📝 Enhanced To-Do List</h1>
+            <p class="subtitle">Stay organized with categories, priorities, and due dates!</p>
+        </header>
+
+        <!-- Enhanced Input Section -->
+        <div class="input-section">
+            <form id="todo-form" class="todo-form">
+                <div class="input-row">
+                    <input 
+                        type="text" 
+                        id="todo-input" 
+                        placeholder="What needs to be done?" 
+                        required
+                        autocomplete="off"
+                        class="task-input"
+                    >
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="category-select">📁 Category</label>
+                        <select id="category-select" class="form-select">
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="health">Health</option>
+                            <option value="education">Education</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="priority-select">⚡ Priority</label>
+                        <select id="priority-select" class="form-select">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="due-date">📅 Due Date</label>
+                        <input type="date" id="due-date" class="form-input">
+                    </div>
+                </div>
+                
+                <button type="submit" class="add-btn">
+                    <span class="btn-text">Add Task</span>
+                    <span class="btn-icon">+</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Enhanced Filter Section -->
+        <div class="filter-section">
+            <div class="filter-group">
+                <h4>Status</h4>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        All (<span id="all-count">0</span>)
+                    </button>
+                    <button class="filter-btn" data-filter="active">
+                        Active (<span id="active-count">0</span>)
+                    </button>
+                    <button class="filter-btn" data-filter="completed">
+                        Completed (<span id="completed-count">0</span>)
+                    </button>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <h4>Category</h4>
+                <div class="filter-buttons">
+                    <button class="category-filter-btn active" data-category="all">All</button>
+                    <button class="category-filter-btn" data-category="personal">📋 Personal</button>
+                    <button class="category-filter-btn" data-category="work">💼 Work</button>
+                    <button class="category-filter-btn" data-category="shopping">🛒 Shopping</button>
+                    <button class="category-filter-btn" data-category="health">🏥 Health</button>
+                    <button class="category-filter-btn" data-category="education">🎓 Education</button>
+                    <button class="category-filter-btn" data-category="other">📦 Other</button>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <h4>Priority</h4>
+                <div class="filter-buttons">
+                    <button class="priority-filter-btn active" data-priority="all">All</button>
+                    <button class="priority-filter-btn" data-priority="high">🔴 High</button>
+                    <button class="priority-filter-btn" data-priority="medium">🟡 Medium</button>
+                    <button class="priority-filter-btn" data-priority="low">🟢 Low</button>
+                </div>
+            </div>
+            
+            <div class="filter-actions">
+                <div class="sort-group">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select" class="form-select">
+                        <option value="created">Date Created</option>
+                        <option value="priority">Priority</option>
+                        <option value="dueDate">Due Date</option>
+                        <option value="category">Category</option>
+                        <option value="alphabetical">A-Z</option>
+                    </select>
+                </div>
+                
+                <button id="clear-completed" class="clear-btn">Clear Completed</button>
+            </div>
+        </div>
+
+        <!-- Tasks Section -->
+        <div class="tasks-section">
+            <ul id="todo-list" class="todo-list">
+                <!-- Enhanced tasks will be dynamically added here -->
+            </ul>
+            
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state">
+                <div class="empty-icon">📋</div>
+                <h3>No tasks yet!</h3>
+                <p>Add a task above to get started with categories and priorities.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>💡 Tip: Use categories and priorities to stay organized!</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

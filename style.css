@@ -1,0 +1,342 @@
+/* Add these styles to your existing style.css */
+
+/* Enhanced Input Section */
+.input-section {
+    padding: 30px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fafbfc;
+}
+
+.todo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.task-input {
+    flex: 1;
+    min-width: 300px;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 120px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-select, .form-input {
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.form-select:focus, .form-input:focus, .task-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Enhanced Filter Section */
+.filter-section {
+    padding: 25px 30px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group h4 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-btn, .category-filter-btn, .priority-filter-btn {
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 6px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.filter-btn:hover, .category-filter-btn:hover, .priority-filter-btn:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.filter-btn.active, .category-filter-btn.active, .priority-filter-btn.active {
+    background: #667eea;
+    border-color: #667eea;
+    color: white;
+}
+
+.filter-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.sort-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.sort-group .form-select {
+    min-width: 150px;
+}
+
+/* Enhanced Todo Items */
+.todo-item {
+    background: white;
+    border: 2px solid #f0f0f0;
+    border-radius: 15px;
+    margin: 15px 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease-out;
+    position: relative;
+}
+
+.todo-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    border-radius: 15px 0 0 15px;
+    transition: all 0.3s ease;
+}
+
+/* Priority Border Colors */
+.todo-item.priority-high::before {
+    background: #ff4757;
+}
+
+.todo-item.priority-medium::before {
+    background: #ffa502;
+}
+
+.todo-item.priority-low::before {
+    background: #2ed573;
+}
+
+.todo-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.todo-main-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    line-height: 1.4;
+}
+
+.todo-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #666;
+    flex-wrap: wrap;
+}
+
+.todo-category {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.todo-priority {
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.todo-priority.high {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.todo-priority.medium {
+    background: #fff3e0;
+    color: #ef6c00;
+}
+
+.todo-priority.low {
+    background: #e8f5e8;
+    color: #2e7d32;
+}
+
+.todo-due-date {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+}
+
+.todo-due-date.overdue {
+    color: #d32f2f;
+    font-weight: 600;
+}
+
+.todo-due-date.due-soon {
+    color: #f57f17;
+    font-weight: 600;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.todo-item:hover .todo-actions {
+    opacity: 1;
+}
+
+.action-btn {
+    background: #f5f5f5;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+}
+
+.edit-btn {
+    color: #2196f3;
+}
+
+.edit-btn:hover {
+    background: #e3f2fd;
+}
+
+.delete-btn {
+    color: #f44336;
+}
+
+.delete-btn:hover {
+    background: #ffebee;
+}
+
+/* Category-specific colors */
+.category-personal { background-color: #e8eaf6; }
+.category-work { background-color: #f3e5f5; }
+.category-shopping { background-color: #e0f2f1; }
+.category-health { background-color: #fce4ec; }
+.category-education { background-color: #fff3e0; }
+.category-other { background-color: #f5f5f5; }
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+    .input-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .task-input {
+        min-width: 100%;
+    }
+    
+    .input-group {
+        min-width: 100%;
+    }
+    
+    .filter-buttons {
+        justify-content: center;
+    }
+    
+    .filter-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .sort-group {
+        justify-content: center;
+    }
+    
+    .todo-meta {
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .todo-actions {
+        opacity: 1;
+    }
+}
